@@ -2,12 +2,11 @@ const url = "https://openapi.programming-hero.com/api/retro-forum/posts";
 fetch(url)
 .then( res => res.json())
 .then(data => displayPosts(data.posts));
-
+var allPosts = [];
 const displayPosts = (data) =>{
     const postContainer = document.getElementById('posts-container');
-
     for(const post of data){
-        console.log(post);
+        allPosts.push(post);
         const newPost = document.createElement("div");
         newPost.classList.add("card", "bg-blue-50", "hover:bg-blue-100", "shadow-xl", "p-12", "my-4");
         newPost.innerHTML = `
@@ -30,7 +29,7 @@ const displayPosts = (data) =>{
                                 <p><i class="fa-regular fa-clock"></i>  ${post?.posted_time}min</p>
                                 </div>
                                 <div>
-                                    <button class="btn btn-accent text-white rounded-full">
+                                    <button class="btn btn-accent text-white rounded-full" onclick="handleMarked(${post?.id})">
                                         <i class="fa-regular fa-envelope-open"></i>
                                     </button>
                                 </div>
@@ -40,5 +39,24 @@ const displayPosts = (data) =>{
         `;
         postContainer.appendChild(newPost);
     }
-    console.log(data);
+};
+
+function handleMarked(id){
+    console.log("mark handle clicked", id);
+    const idChecker = allPosts.filter(n=> n.id === id);
+    const newItem = idChecker[0];
+    const newTitle = newItem.title;
+    const newViewCount = newItem.view_count;
+    const titleContainer = document.getElementById('title-container');
+    const newTitleCard = document.createElement("div");
+    newTitleCard.classList.add("bg-white", "p-2", "rounded-md", "my-4");
+    newTitleCard.innerHTML = `
+    
+    <div class="flex gap-4">
+    <div ><h2 class="text-md font-medium">${newTitle}</h2></div>
+  <div class="w-36"><p><i class="fa-regular fa-eye"></i> ${newViewCount}</p></div>
+  </div>
+    `;
+    titleContainer.append(newTitleCard)
+    
 }
