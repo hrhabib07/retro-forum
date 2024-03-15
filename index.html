@@ -14,7 +14,77 @@
 <script src="https://kit.fontawesome.com/8d5de4636b.js" crossorigin="anonymous"></script>
 </head>
 <body class="mulish-font">
-    <header></header>
+    <header>
+
+        <!-- navbar starts here  -->
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 items-center">
+                    <li class="my-2"><i class="fa-solid fa-house text-xl"></i></li>
+                    <li class="my-2"><i class="fa-solid fa-pen text-xl"></i></li>
+                    <li class="my-2"><i class="fa-solid fa-user-plus text-xl"></i></li>
+                    <li class="my-2"><i class="fa-solid fa-flag text-xl"></i></li>
+    
+                    
+                    <li><button class="btn btn-accent text-white ml-2 text-xl">Sign In</button></li>
+                </ul>
+              </div>
+              <img class="p-4" src="images/logo.png" alt="">
+            </div>
+            <div class="navbar-end hidden lg:flex">
+              <ul class="menu menu-horizontal px-1">
+                <li class="my-2"><i class="fa-solid fa-house text-xl"></i></li>
+                <li class="my-2"><i class="fa-solid fa-pen text-xl"></i></li>
+                <li class="my-2"><i class="fa-solid fa-user-plus text-xl"></i></li>
+                <li class="my-2"><i class="fa-solid fa-flag text-xl"></i></li>
+
+                
+                <li><button class="btn btn-accent text-white ml-2 text-xl">Sign In</button></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- top banner section starts here  -->
+          <div class="bg-accent h-96 text-white flex justify-between items-center px-12">
+            <div class="flex items-start justify-evenly m-4">
+                <div>
+                    <h2 class="text-7xl font-bold">Welcome to the <br> <span class="text-gray-800">ReTro</span> Forum</h2>
+                    <p class="text-2xl my-4">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
+                   <div class="bg-white w-[400px] flex justify-between py-2 rounded-md"> <input class="ml-2 p-2 border-none " type="text" placeholder="search here anything" disabled><button class="btn btn-accent text-white mr-2">Search</button></div>
+                  
+                </div>
+            </div>
+            <div class="flex  items-center">
+                <div class="card bg-base-100 shadow-xl text-black">
+                    <div class="card-body w-80">
+                        <div class="flex justify-between text-xl text-gray-600 ">
+                            <p>Registered User</p>
+                            <p>01</p>
+                        </div>
+                        <div class="flex justify-between text-xl text-gray-600 ">
+                            <p>Forum</p>
+                            <p class="ml-20">05</p>
+                        </div>
+                        <div class="flex justify-between text-xl text-gray-600 ">
+                            <p>Topics</p>
+                            <p class="ml-20">01</p>
+                        </div>
+                        <div class="flex justify-between text-xl text-gray-600 ">
+                            <p>Replies</p>
+                            <p class="ml-20">01</p>
+                        </div>
+                      
+                      
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+    </header>
     <main class="container mx-auto">
         <section class="my-4 container">
             <h2 class="text-6xl text-center font-bold">Let's Discuss</h2>
@@ -47,8 +117,6 @@
                 <p class="text-gray-500 text-center text-xl my-4">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p></div>
 <!-- card container  -->
             <div id="latest-posts-container" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-               
-            
             </div>
         </section>
        
