@@ -10,9 +10,10 @@ const displayPosts = (data) =>{
         const newPost = document.createElement("div");
         newPost.classList.add("card", "bg-blue-50", "hover:bg-blue-100", "shadow-xl", "p-12", "my-4");
         newPost.innerHTML = `
+        
         <div class="flex gap-4">
                            <div>
-                            <div class="avatar placeholder online">
+                            <div class="avatar placeholder ${post?.isActive ? "online" : "offline" }">
                                 <div class="bg-white text-neutral-content rounded w-24">
                                 <img src="${post?.image}" />
                                 </div>
@@ -36,13 +37,14 @@ const displayPosts = (data) =>{
                               </div>
                             </div>
                         </div>
+        
         `;
         postContainer.appendChild(newPost);
     }
 };
 
 function handleMarked(id){
-    console.log("mark handle clicked", id);
+    // console.log("mark handle clicked", id);
     const idChecker = allPosts.filter(n=> n.id === id);
     const newItem = idChecker[0];
     const newTitle = newItem.title;
@@ -57,6 +59,7 @@ function handleMarked(id){
   <div class="w-36"><p><i class="fa-regular fa-eye"></i> ${newViewCount}</p></div>
   </div>
     `;
-    titleContainer.append(newTitleCard)
+    titleContainer.append(newTitleCard);
+    console.log(newItem);
     
 }
